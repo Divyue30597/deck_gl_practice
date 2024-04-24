@@ -1,0 +1,25 @@
+.button {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  width: 100%;
+  font-size: 1.4rem;
+  background-color: #d3f8e2;
+  transition: background-color 350ms;
+  color: #111;
+  border-radius: 0.4rem;
+
+  span {
+    display: inline-block;
+    font-weight: bolder;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-color: rgb(169, 198, 181);
+  }
+}

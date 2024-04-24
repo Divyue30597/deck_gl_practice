@@ -1,14 +1,12 @@
 .box {
   position: absolute;
   z-index: 999;
-  width: calc(100dvw / 4);
-  top: 12px;
-  left: 12px;
+  width: calc(100dvw / 5);
   color: #fff;
 
   background-color: #111;
   padding: 2rem;
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
 
   h1 {
     margin-bottom: 1.2rem;

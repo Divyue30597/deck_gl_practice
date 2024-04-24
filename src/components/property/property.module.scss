@@ -1,0 +1,29 @@
+.property {
+  list-style: none;
+  font-size: 1.6rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+
+    & > button {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 0.4rem;
+      background-color: #fefefe;
+      cursor: pointer;
+      transition: background-color 250ms;
+      width: 50%;
+
+      &:hover {
+        background-color: #cecece;
+      }
+    }
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 0.6rem;
+  }
+}

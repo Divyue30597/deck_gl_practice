@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
-import eye_open from "/public/eye_open.svg";
-import eye_close from "/public/eye_close.svg";
+import eye_open from "/eye_open.svg";
+import eye_close from "/eye_close.svg";
 
 import styles from "./button.module.scss";
 

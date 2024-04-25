@@ -1,6 +1,6 @@
 import { APIProvider, Map, limitTiltRange } from "@vis.gl/react-google-maps";
 import { GeoJsonLayer } from "@deck.gl/layers";
-import { Accessor, Color, DeckGL, PolygonLayer } from "deck.gl";
+import { DeckGL } from "deck.gl";
 import { useEffect, useState } from "react";
 
 import styles from "./app.module.scss";
@@ -10,39 +10,6 @@ import Box from "./components/box/box";
 import { TFeature, featureCollection, TProperty } from "./types/types";
 import Property from "./components/property/property";
 
-const feature = {
-  type: "Feature",
-  properties: {
-    id: 84539,
-    ufi: "9100094640",
-    city: "Gurugram",
-    Locality: "Sector 82A",
-  },
-  geometry: {
-    type: "Polygon",
-    coordinates: [
-      [
-        [76.956825, 28.386549],
-        [76.967454, 28.392028],
-        [76.971374, 28.38787],
-        [76.972875, 28.386832],
-        [76.973348, 28.386367],
-        [76.972103, 28.385039],
-        [76.971846, 28.38485],
-        [76.970515, 28.383415],
-        [76.967265, 28.381711],
-        [76.966889, 28.382207],
-        [76.965108, 28.382981],
-        [76.964765, 28.382396],
-        [76.962941, 28.383623],
-        [76.959915, 28.382075],
-        [76.959674, 28.381943],
-        [76.956825, 28.386549],
-      ],
-    ],
-  },
-};
-
 const INITIAL_STATE = {
   position: { lat: 28.457523, lng: 77.026344 },
   zoom: 11,
@@ -51,11 +18,6 @@ const INITIAL_STATE = {
 function App() {
   // Set toggle
   const [toggle, setToggle] = useState(true);
-  // Set Color
-  const [color, setColor] = useState<
-    // @ts-ignore
-    (Accessor<Feature<Geometry, any>, Color> & number[]) | undefined
-  >([169, 198, 181, 100]);
   // Set id
   const [id, setId] = useState<number>(0);
   // Set reqdata
@@ -83,7 +45,7 @@ function App() {
 
     let data = getIfIdIsPresent();
 
-    console.log(data)
+    console.log(data);
 
     if (data[0]?.properties.id === id) {
       layers.push(
@@ -110,7 +72,7 @@ function App() {
     data: "http://localhost:8000/data",
     fill: true,
     stroked: true,
-    getFillColor: color,
+    getFillColor: [169, 198, 181, 100],
     getLineColor: [169, 198, 181],
     // default is meters not pixels
     getLineWidth: 20,
@@ -124,7 +86,7 @@ function App() {
 
   layers.push(layer);
 
-  console.log(layers)
+  console.log(layers);
 
   return (
     <APIProvider apiKey={import.meta.env.VITE_REACT_GOOGLE_MAP}>
